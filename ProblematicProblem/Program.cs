@@ -117,7 +117,7 @@ namespace ProblematicProblem
             Console.WriteLine();
         }
 
-        // Accepts yes/no and also true/false. Internally normalizes then uses TryParse for robustness.
+        
         static bool ReadBoolYesNo()
         {
             while (true)
@@ -130,11 +130,11 @@ namespace ProblematicProblem
                 }
 
                 input = input.Trim().ToLowerInvariant();
-                // Normalize common yes/no to booleans
+                
                 if (input is "y" or "yes") return true;
                 if (input is "n" or "no") return false;
 
-                // Fallback to bool.TryParse for true/false
+               
                 if (bool.TryParse(input, out bool value)) return value;
 
                 Console.WriteLine("Please enter yes or no: ");
@@ -151,7 +151,7 @@ namespace ProblematicProblem
             }
         }
 
-        // Returns true if user wants to redo (continue loop), false if keep (break loop)
+        
         static bool ReadKeepRedoIsRedo()
         {
             while (true)
@@ -164,8 +164,8 @@ namespace ProblematicProblem
                 }
 
                 input = input.Trim().ToLowerInvariant();
-                if (input is "keep" or "k" or "yes" or "y") return false; // stop looping
-                if (input is "redo" or "r" or "no" or "n") return true;   // continue looping
+                if (input is "keep" or "k" or "yes" or "y") return false; 
+                if (input is "redo" or "r" or "no" or "n") return true;   
 
                 Console.WriteLine("Please enter keep or redo: ");
             }
